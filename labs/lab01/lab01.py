@@ -1,3 +1,4 @@
+from doctest import run_docstring_examples
 """Lab 1: Expressions and Control Structures"""
 
 # Q3
@@ -78,7 +79,7 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
-    
+
     a = 0
     b = 0
     while n != 0:
@@ -108,3 +109,5 @@ def double_eights(n):
 # print(double_eights(880088))
 # print(double_eights(12345))
 # print(double_eights(80808080))
+
+run_docstring_examples(double_eights, globals(), True)
