@@ -51,11 +51,17 @@ def product(n, term):
     True
     """
     "*** YOUR CODE HERE ***"
-    res = 1
-    for i in range(1, n+1):
-        res *= term(i)
+    # res = 1
+    # for i in range(1, n+1):
+    #     res *= term(i)
+    #
+    # return res
 
-    return res
+    total, k = 1, 1
+    while k <= n:
+        total, k = total*term(k), k+1
+
+    return total
 
 def factorial(n):
     """Return n factorial for n >= 0 by calling product.
@@ -158,3 +164,14 @@ def make_repeater(f, n):
     """
     "*** YOUR CODE HERE ***"
     return lambda x: x if n == 0  else accumulate(compose1, f, n-1, lambda y: f)(x)
+
+def make_repeater1(f, n):
+    return accumulate(compose1, identity, n, lambda x: f)
+
+def make_repeater2(f, n):
+    g = identity
+    while n > 0:
+        g = compose1(f, g)
+        n -= 1
+
+    return g
