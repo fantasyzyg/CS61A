@@ -1,0 +1,6 @@
+'add_chars-correct', (512, 70)
+'sprout_leaves-correct', (2048, 70)
+'acorn_finder-correct', (1024, 70)
+'merge-correct', (0, 70)
+'build_successors_table-correct', (1536, 70)
+'add_trees-correct', (2560, 70)
